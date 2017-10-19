@@ -15,6 +15,6 @@ class ContactValidator
     }
     function validateForm($formData)
     {
-        return !empty($formData) && validateName($formData['name']) && validateSurname($formData['surname']) && validatePhoneNumber($formData['number']);
+        return !empty($formData) && $this -> validateName($formData['name']) && $this -> validateSurname($formData['surname']) && $this -> validatePhoneNumber($formData['number']);
     }
 }

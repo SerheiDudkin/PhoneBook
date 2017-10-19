@@ -1,10 +1,10 @@
 <?php
 require_once "DBReader.php";
 
-function readAllContactsFromDB(DBReader $dbReader){
+function readAllContactsFromDB(DBReader $dbReader)
+{
     $contacts = [];
-    while($contact = $dbReader->readContact())
-    {
+    while ($contact = $dbReader->readContact()) {
         $contacts[] = $contact;
     }
     return $contacts;
@@ -20,19 +20,19 @@ $contacts = readAllContactsFromDB($dbReader);
 <h1>Contacts</h1>
 <table>
     <thead>
-    <th>
-    <td>Name</td>
-    <td>Surname</td>
-    <td>Phone Number</td>
+    <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Phone Number</th>
 
-    </th>
+    </tr>
     </thead>
     <tbody>
-    <?php foreach($contacts as $contact): ?>
+    <?php foreach ($contacts as $contact): ?>
         <tr>
-            <td><?php echo $contact->name;?></td>
-            <td><?php echo $contact->surname;?></td>
-            <td><?php echo $contact->number;?></td>
+            <td><?php echo $contact->name; ?></td>
+            <td><?php echo $contact->surname; ?></td>
+            <td><?php echo $contact->number; ?></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
